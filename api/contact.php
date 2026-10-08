@@ -31,7 +31,7 @@
                         <h2 class="title">Need Help?</h2>
                         <p class="desc">Reach out to explore the most dependable sovereign solutions.</p>
                     </div>
-                    <form action="assets/mail/contact.php" method="POST" class="contact-form">
+                    <form action="" method="POST" class="contact-form">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
