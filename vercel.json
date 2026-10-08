@@ -1,0 +1,16 @@
+{
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.9.0"
+    }
+  },
+  "routes": [
+    { "src": "/", "dest": "/api/index.php" },
+    { "src": "/index.php", "dest": "/api/index.php" },
+    { "src": "/about.php", "dest": "/api/about.php" },
+    { "src": "/services.php", "dest": "/api/services.php" },
+    { "src": "/contact.php", "dest": "/api/contact.php" },
+    { "src": "/our-ceo.php", "dest": "/api/our-ceo.php" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}

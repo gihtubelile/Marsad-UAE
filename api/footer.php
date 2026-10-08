@@ -99,7 +99,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <p>Copyright © 2025. Designed by <a href="index.html">Marsad</a></p>
+                        <p>Copyright © 2025. Designed by <a href="index.php">Marsad</a></p>
                     </div>
                 </div>
             </div>

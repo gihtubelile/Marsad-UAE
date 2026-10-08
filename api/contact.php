@@ -1,4 +1,4 @@
-<?php include('header.php') ?>
+<?php include(__DIR__ . '/header.php') ?>
 <!-- Page Header Start -->
 <div class="page-header parallaxie">
     <div class="container">
@@ -9,7 +9,7 @@
                     <h1>Contact us</h1>
                     <nav>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Contact us</li>
                         </ol>
                     </nav>
@@ -145,4 +145,4 @@
     </div>
 </div>
 <!-- End Contact Area -->
-<?php include('footer.php') ?>
+<?php include(__DIR__ . '/footer.php') ?>

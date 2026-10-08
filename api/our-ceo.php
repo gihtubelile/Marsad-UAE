@@ -1,4 +1,4 @@
- <?php include('header.php') ?>
+ <?php include(__DIR__ . '/header.php') ?>
 
  <!-- Page Header Start -->
 <div class="page-header parallaxie">
@@ -311,4 +311,4 @@
         </div>
       </section>
 
-       <?php include('footer.php') ?>
+       <?php include(__DIR__ . '/footer.php') ?>

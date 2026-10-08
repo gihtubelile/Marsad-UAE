@@ -1,4 +1,4 @@
-<?php include('header.php') ?>
+<?php include(__DIR__ . '/header.php') ?>
 
 <!-- Page Header Start -->
 <div class="page-header parallaxie">
@@ -10,7 +10,7 @@
                     <h1>Our Services</h1>
                     <nav>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="about.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="about.php">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Our Services</li>
                         </ol>
                     </nav>
@@ -228,7 +228,7 @@
                         nation's digital backbone. </p>
                 </div>
                 <div class="col-lg-3 text-lg-end text-start">
-                    <a href="contact.html" class="btn-default btn-highlighted">Contact Us</a>
+                    <a href="contact.php" class="btn-default btn-highlighted">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -236,4 +236,4 @@
 </div>
 <!-- End Quick Contact Area -->
 
-<?php include('footer.php') ?>
+<?php include(__DIR__ . '/footer.php') ?>

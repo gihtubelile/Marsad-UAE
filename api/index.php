@@ -1,4 +1,4 @@
-<?php include('header.php') ?>
+<?php include(__DIR__ . '/header.php') ?>
 <!-- Hero Section Start -->
 <div class="hero parallaxie">
     <div class="container">
@@ -453,4 +453,4 @@
 <!-- End Features Area -->
 
 
-<?php include('footer.php') ?>
+<?php include(__DIR__ . '/footer.php') ?>
