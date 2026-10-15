@@ -117,7 +117,7 @@
                                     <div class="info">
                                         <p>
                                             <strong>Write to us</strong>
-                                            info@marsadtech.me
+                                            <a href="mailto:info@marsadtech.me" class="text-reset">info@marsadtech.me</a>
                                         </p>
                                     </div>
                                 </li>
@@ -128,7 +128,7 @@
                                     <div class="info">
                                         <p>
                                             <strong>Make a call</strong>
-                                            + 971 056.329.2225
+                                            <a href="tel:+971563292225" class="text-reset">+ 971 056.329.2225</a>
                                         </p>
                                     </div>
                                 </li>

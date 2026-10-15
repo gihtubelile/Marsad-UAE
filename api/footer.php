@@ -84,7 +84,7 @@
                                     </li>
                                     <li>
                                         <strong>Phone:</strong>
-                                        <a href="tel:09710563292225" class="text-white">+ 971 056.329.2225</a><br>
+                                        <a href="tel:+971563292225" class="text-white">+ 971 056.329.2225</a><br>
                                     </li>
                                 </ul>
                             </div>
