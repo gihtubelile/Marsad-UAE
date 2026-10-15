@@ -10,4 +10,4 @@ MARSAD PHP - VERCEL DEPLOYMENT
 Important:
 - PHP pages are in /api for Vercel's PHP runtime.
 - Static assets remain in /assets.
-- The supplied contact form points to assets/mail/contact.php, but that file was NOT present in the original ZIP. The contact form will need a mail handler/API before it can submit successfully.
+- The contact form posts to /send-mail.php (api/send-mail.php, PHPMailer via composer.json) and needs these Vercel env vars: SMTP_USERNAME, SMTP_PASSWORD, CONTACT_RECEIVER_ADDRESS.

@@ -11,6 +11,7 @@
     { "src": "/services.php", "dest": "/api/services.php" },
     { "src": "/contact.php", "dest": "/api/contact.php" },
     { "src": "/our-ceo.php", "dest": "/api/our-ceo.php" },
+    { "src": "/send-mail.php", "dest": "/api/send-mail.php" },
     { "src": "/(.*)", "dest": "/$1" }
   ]
 }

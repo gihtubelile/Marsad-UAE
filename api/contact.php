@@ -31,19 +31,19 @@
                         <h2 class="title">Need Help?</h2>
                         <p class="desc">Reach out to explore the most dependable sovereign solutions.</p>
                     </div>
-                    <form action="" method="POST" class="contact-form">
+                    <form action="send-mail.php" method="POST" class="contact-form" id="contactForm">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input class="form-control" id="name" name="name" placeholder="Name"
-                                        type="text">
+                                    <input class="form-control" id="name" name="name" placeholder="Name*"
+                                        type="text" required>
                                     <span class="alert-error"></span>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <input class="form-control" id="email" name="email" placeholder="Email*"
-                                        type="email">
+                                        type="email" required>
                                     <span class="alert-error"></span>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                             <div class="col-lg-12">
                                 <div class="form-group comments">
                                     <textarea class="form-control" id="comments" name="comments"
-                                        placeholder="Please describe what you need."></textarea>
+                                        placeholder="Please describe what you need." required></textarea>
                                 </div>
                             </div>
                         </div>
@@ -145,4 +145,62 @@
     </div>
 </div>
 <!-- End Contact Area -->
+<!-- Contact Toast -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body" id="toastMessage"></div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var WHATSAPP_NUMBER = '971563292225';
+        var form = document.getElementById('contactForm');
+        var submitBtn = document.getElementById('submit');
+
+        function showToast(message, ok) {
+            var toastEl = document.getElementById('liveToast');
+            toastEl.classList.remove(ok ? 'text-bg-danger' : 'text-bg-success');
+            toastEl.classList.add(ok ? 'text-bg-success' : 'text-bg-danger');
+            document.getElementById('toastMessage').textContent = message;
+            new bootstrap.Toast(toastEl).show();
+        }
+
+        function openWhatsApp(formData) {
+            var text = [
+                'Hi Marsad, I just submitted the contact form on your website.',
+                '',
+                'Name: ' + formData.get('name'),
+                'Email: ' + formData.get('email'),
+                'Phone: ' + formData.get('phone'),
+                '',
+                'Message: ' + formData.get('comments')
+            ].join('\n');
+            window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var formData = new FormData(form);
+            // Open before awaiting so browsers treat it as part of the click and don't block the popup
+            openWhatsApp(formData);
+            submitBtn.disabled = true;
+
+            fetch(form.action, { method: 'POST', body: formData })
+                .then(function (res) { return res.json(); })
+                .then(function (result) {
+                    showToast(result.message, result.success);
+                    if (result.success) form.reset();
+                })
+                .catch(function () {
+                    showToast('Ooops! There was a problem sending your message. Please try again.', false);
+                })
+                .finally(function () {
+                    submitBtn.disabled = false;
+                });
+        });
+    });
+</script>
 <?php include(__DIR__ . '/footer.php') ?>
